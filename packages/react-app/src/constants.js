@@ -1,3 +1,5 @@
+// MY WALLET ADDR, You should adjust here.
+export const MY_WALLET = "0x73c7448760517E3E6e416b2c130E3c6dB2026A1d";
 // MY INFURA_ID, SWAP IN YOURS FROM https://infura.io/dashboard/ethereum
 export const INFURA_ID = "95ff362df12840c98fa418bcd4b27c8a";
 

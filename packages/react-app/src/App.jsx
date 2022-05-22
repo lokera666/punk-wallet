@@ -22,7 +22,7 @@ import {
   SpeedUpTransactions,
   Wallet,
 } from "./components";
-import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
+import { INFURA_ID, NETWORK, NETWORKS, MY_WALLET } from "./constants";
 import { Transactor } from "./helpers";
 import { useBalance, useExchangePrice, useGasPrice, useLocalStorage, usePoller, useUserProvider } from "./hooks";
 
@@ -200,8 +200,8 @@ function App(props) {
   const gasPrice = useGasPrice(targetNetwork, "fast");
   // Use your injected provider from 🦊 Metamask or if you don't have it then instantly generate a 🔥 burner wallet.
   const userProvider = useUserProvider(injectedProvider, localProvider);
-  const address = useUserAddress(userProvider);
-
+  // const address = useUserAddress(userProvider);
+  const address = MY_WALLET;
   // You can warn the user if you would like them to be on a specific network
   const localChainId = localProvider && localProvider._network && localProvider._network.chainId;
   const selectedChainId = userProvider && userProvider._network && userProvider._network.chainId;
@@ -434,6 +434,7 @@ function App(props) {
                 // Required
                 uri: walletConnectUrl,
                 // Required
+                // Change Place
                 clientMeta: {
                   description: "Forkable web wallet for small/quick transactions.",
                   url: "https://punkwallet.io",
@@ -799,6 +800,7 @@ function App(props) {
       </div>
 
       <div style={{ clear: "both", opacity: yourLocalBalance ? 1 : 0.2, width: 500, margin: "auto",position:"relative" }}>
+         {/* Attention: Balance Place */}
         <Balance value={yourLocalBalance} size={12+window.innerWidth/16} price={price} />
         <span style={{ verticalAlign: "middle" }}>
           {networkSelect}

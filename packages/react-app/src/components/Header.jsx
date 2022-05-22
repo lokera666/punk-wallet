@@ -5,11 +5,11 @@ import React from "react";
 
 export default function Header( props ) {
   return (
-
+      //Attention: replace here
       <PageHeader
         title={(
           <a href="https://punkwallet.io" >
-            {window.innerWidth<600?"🧑‍🎤":"🧑‍🎤  PunkWallet.io"}
+            {window.innerWidth<600?"🧑‍🎤":"🧑‍🎤  Leeduckgo.io"}
           </a>
         )}
         subTitle=<a href="https://github.com/scaffold-eth/scaffold-eth/tree/punk-wallet">
