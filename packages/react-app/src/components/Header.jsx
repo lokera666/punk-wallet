@@ -1,26 +1,23 @@
+import { PageHeader } from "antd";
 import React from "react";
-import { Typography } from "antd";
-
-const { Title, Text } = Typography;
 
 // displays a page header
 
-export default function Header({ link, title, subTitle, ...props }) {
+export default function Header( props ) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", padding: "1.2rem" }}>
-      <div style={{ display: "flex",  flexDirection: "column", flex: 1, alignItems: "start" }}>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <Title level={4} style={{ margin: "0 0.5rem 0 0" }}>{title}</Title>
+
+      <PageHeader
+        title={(
+          <a href="https://punkwallet.io" >
+            {window.innerWidth<600?"🧑‍🎤":"🧑‍🎤  PunkWallet.io"}
+          </a>
+        )}
+        subTitle=<a href="https://github.com/scaffold-eth/scaffold-eth/tree/punk-wallet">
+          {window.innerWidth<600?"":"info/code"}
         </a>
-        <Text type="secondary" style={{ textAlign: "left" }}>{subTitle}</Text>
-      </div>
-      {props.children}
-    </div>
+        style={{ cursor: "pointer",fontSize:32 }}
+        extra={props.extra}
+      />
+
   );
 }
-
-Header.defaultProps = {
-  link: "https://github.com/austintgriffith/scaffold-eth",
-  title: "🏗 scaffold-eth",
-  subTitle: "forkable Ethereum dev stack focused on fast product iteration",
-};

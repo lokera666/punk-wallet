@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import { gql, useQuery } from "@apollo/client";
 import { Button, Input, Table, Typography } from "antd";
 import "antd/dist/antd.css";
@@ -80,7 +81,7 @@ function Subgraph(props) {
       </div>
       <div style={{ margin: "auto", marginTop: 32 }}>
         Instead, you can use{" "}
-        <a href="https://thegraph.com/docs/about/introduction" target="_blank" rel="noopener noreferrer">
+        <a href="https://thegraph.com/docs/introduction" target="_blank" rel="noopener noreferrer">
           The Graph
         </a>{" "}
         with 🏗 scaffold-eth (
@@ -91,18 +92,10 @@ function Subgraph(props) {
       </div>
 
       <div style={{ margin: 32 }}>
-        <span style={{ marginRight: 8 }}>⛓️</span>
-        Make sure your local chain is running first:
-        <span className="highlight" style={highlight}>
-          yarn chain
-        </span>
-      </div>
-
-      <div style={{ margin: 32 }}>
         <span style={{ marginRight: 8 }}>🚮</span>
-        Clean up previous data, if there is any:
+        Clean up previous data:
         <span className="highlight" style={highlight}>
-          yarn clean-graph-node
+          rm -rf docker/graph-node/data/
         </span>
       </div>
 
@@ -110,7 +103,7 @@ function Subgraph(props) {
         <span style={{ marginRight: 8 }}>📡</span>
         Spin up a local graph node by running
         <span className="highlight" style={highlight}>
-          yarn run-graph-node
+          yarn graph-run-node
         </span>
         <span style={{ marginLeft: 4 }}>
           {" "}
